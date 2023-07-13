@@ -1,0 +1,80 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  font-size:1.5rem;
+  font-family: sans-serif;
+}
+
+body{
+  margin-top:150vh;
+  min-height: 100vh;
+  display:flex;
+  flex-flow: column nowrap;;
+}
+
+main{
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items:center;
+  gap:1rem;
+}
+
+div{
+  width:160px;
+  height:160px;
+  border:1px solid grey;
+  display: grid;
+  place-content: center;
+}
+
+div:first-child{
+  background-color:dodgerblue;
+  transform:translateX(-50%) rotateX(180deg) skewX(-10deg);
+}
+
+div:nth-child(2){
+  background-color:yellow;
+  transform: translateY(-2rem) rotateY(180deg) rotateZ(45deg) scaleY(120%);
+}
+
+div:last-child{
+  background-color: darkgreen;
+  transform: translate(100%, -2rem) scaleX(120%) rotateX(45deg);
+  color:white;
+}
+
+div:hover{
+  background-color: midnightblue !important;
+  transition: all 2s linear 0.5s;
+  cursor: pointer;
+}
+
+div:last-child:hover{
+  transform:translate(100%, -2rem) scaleX(120%) rotate(180deg) ;
+}
+
+.animate {
+  animation: 5s ease-in-out 1s 2 normal forwards slide;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(600px) rotate(180deg);
+  }
+  66% {
+    transform: translateX(-600px) rotate(-180deg);
+  }
+  100% {
+    transform: translateX(0);
+    background-color: rebeccapurple;
+  }
+}
